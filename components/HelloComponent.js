@@ -7,7 +7,7 @@ class HelloComponent extends Component {
 
   render() {
     return (
-      <p>Hello World 1</p>
+      <p>Hello World</p>
     )
   }
 }
