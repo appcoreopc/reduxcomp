@@ -1,0 +1,36 @@
+import React from 'react'
+import { connect } from 'react-redux'
+import { doLogin } from "../actions"
+
+let Login = ({dispatch}) => 
+{
+	let input
+	let password
+
+	dispatch({type : 'LOGIN'})
+
+	return (
+
+	 <div>
+      <form onSubmit={e => {
+        e.preventDefault()
+        if (!input.value.trim()) {
+          return
+        }
+        dispatch(doLogin())
+        input.value = ''
+      }}>
+        <input ref={node => {
+          input = node
+        }} />
+        <button type="submit">
+          Add Todo
+        </button>
+      </form>
+    </div>		
+	)
+}
+
+Login = connect()(Login)
+export default Login
+
