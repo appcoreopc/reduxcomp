@@ -18,7 +18,7 @@ function render() {
   )
 
   ReactDOM.render(
-    <SignIn showForgetPassword='true'/>,
+    <SignIn showForgetPassword={true}/>,
     signin  
   )
 }

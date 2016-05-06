@@ -15,7 +15,7 @@ class SignIn extends Component {
         <input type='text' placeholder='password' />
         <button> Sign In </button>
 
-        { this.props.showForgetPassword == 'true' ? <ForgotPassword /> : null }
+        { this.props.showForgetPassword == true ? <ForgotPassword /> : null }
         
       </div>
     )
