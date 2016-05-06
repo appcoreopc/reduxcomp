@@ -4,28 +4,28 @@ import { doLogin } from "../actions"
 
 let Login = ({dispatch}) => 
 {
-	let input
+	let username
 	let password
-
-	dispatch({type : 'LOGIN'})
 
 	return (
 
 	 <div>
       <form onSubmit={e => {
         e.preventDefault()
-        if (!input.value.trim()) {
-          return
-        }
-        dispatch(doLogin())
-        input.value = ''
-      }}>
-        <input ref={node => {
-          input = node
-        }} />
-        <button type="submit">
-          Add Todo
-        </button>
+        dispatch(doLogin({
+          username : username, 
+          password : password, 
+          url : 'secret'
+        }))
+          username = '' 
+          password = '' 
+        }}>
+
+        <input value={username} placeholder='Username' />
+
+        <input value={password} placeholder='Password' />
+
+        <button type="submit">Login</button>
       </form>
     </div>		
 	)

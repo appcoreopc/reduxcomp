@@ -1,5 +1,6 @@
-export const doLogin = () => {
+export const doLogin = (loginInfo) => {
   return {
-    type: 'LOGIN'    
+    type: 'LOGIN', 
+    state : loginInfo
   }
 }
