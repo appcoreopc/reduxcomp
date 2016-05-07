@@ -20,10 +20,10 @@ let ForgotPassword = ({dispatch, email, message}) =>
       <form onSubmit={e => {
         e.preventDefault()
         console.log('forgot module!!')
-        dispatch(doForgotPassword({
+        doForgotPassword(dispatch, {
             email : emailInput.value, 
             message : 'no mesage'
-          }))
+          })
           emailInput = '' 
         }}>
 
