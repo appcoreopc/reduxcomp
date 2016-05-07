@@ -15,8 +15,8 @@ const mapStateToProps = (state, ownProps) => {
 
 let Login = ({dispatch, url, message, password, username}) => 
 {
-	//let username
-	//let password
+	let usernameInput
+	let passwordInput
 
   console.log(url)
   console.log(message)
@@ -29,8 +29,8 @@ let Login = ({dispatch, url, message, password, username}) =>
       <form onSubmit={e => {
         e.preventDefault()
         dispatch(doLogin({
-            username : username, 
-            password : password, 
+            username : usernameInput.value, 
+            password : passwordInput.value, 
             url : 'secret', 
             message : 'no mesage'
           }))
@@ -38,8 +38,8 @@ let Login = ({dispatch, url, message, password, username}) =>
           password = '' 
         }}>
 
-        <input placeholder='Username' />
-        <input placeholder='Password' />
+        <input placeholder='Username' ref={ node => { usernameInput = node }} />
+        <input placeholder='Password' ref={ node => { passwordInput = node }}/>
 
         {url}
 

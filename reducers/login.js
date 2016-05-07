@@ -1,5 +1,6 @@
 const login = (state, action)  => 
 {
+  console.log(state)
   switch (action.type)  {
     case 'LOGIN':
 	    return { 
@@ -9,8 +10,7 @@ const login = (state, action)  =>
 	    	message : action.message
 	    }
     default: 
-	      return { 
-	}
+	      return {}
   }
 }
 
