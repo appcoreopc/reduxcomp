@@ -1,14 +1,13 @@
-const forgotpassword = (state = 'FORGOT_PASSWORD', action)  => {
+const forgotpassword = (state, action)  => {
 	switch(action.type)
 	{
 		case 'FORGOT_PASSWORD':
-			console.log('forgot password')
 		  return {
-			id  : action.id, 
-			text : action.text
+			email : action.email,
+	    	message : action.message
 		  }
 		default : 
-			return state;
+			return { };
 	}
 }
 

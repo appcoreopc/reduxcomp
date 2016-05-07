@@ -33,10 +33,8 @@ let Login = ({dispatch, url, message, password, username}) =>
 
         <input placeholder='Username' ref={ node => { usernameInput = node }} />
         <input placeholder='Password' ref={ node => { passwordInput = node }}/>
-
-        {url}
-
-        <button type="submit">Login</button>
+          <button type="submit">Login</button>
+          <span>{message}</span>
       </form>
     </div>		
 	)

@@ -7,3 +7,12 @@ export const doLogin = (loginInfo) => {
     	password : loginInfo.password
   }
 }
+
+export const doForgotPassword = (loginInfo) => {
+  console.log(loginInfo)
+  return {
+    	type: 'FORGOT_PASSWORD', 
+    	email : loginInfo.email,
+    	message : loginInfo.message
+       }
+}
