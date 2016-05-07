@@ -16,7 +16,7 @@ let ForgotPassword = ({dispatch, email, message}) =>
 
   return (
 
-   <div className='forgotBox'>
+   <div className='gridbox'>
       <form onSubmit={e => {
         e.preventDefault()
         console.log('forgot module!!')

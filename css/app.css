@@ -1,0 +1,10 @@
+.loginbox { 
+	width: 253px;
+    height: 450px;
+    transform: translate3d(269px, 0px, 0px);
+    position: absolute;
+    box-sizing: border-box;
+    display: block;
+    transition: transform 300ms ease;
+    background-image: url("http://invisionapp.com/subsystems/do_ui_kit/assets/img/screens/original-1x/screen-1-2-sign-up.jpg");
+}

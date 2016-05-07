@@ -18,7 +18,7 @@ let Login = ({dispatch, url, message, password, username}) =>
 
   return (
 
-	 <div className='loginBox'>
+	 <div className='gridbox'>
       <form onSubmit={e => {
         e.preventDefault()
         dispatch(doLogin({
