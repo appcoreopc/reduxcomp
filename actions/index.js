@@ -1,6 +1,10 @@
 export const doLogin = (loginInfo) => {
   return {
     type: 'LOGIN', 
-    state : loginInfo
+    message : loginInfo.message,
+    url  : loginInfo.url, 
+    username : loginInfo.username,
+    password : loginInfo.password
+
   }
 }

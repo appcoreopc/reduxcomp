@@ -5,13 +5,13 @@ import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
 import loginApp from './reducers/loginApp'
-import LoginApp from './components/LoginApp'
+import Login from './components/Login'
 
 let store = createStore(loginApp)
 
 render(
   <Provider store={store}>
-    <LoginApp />
+    <Login />
   </Provider>,
   document.getElementById('signin')
 )

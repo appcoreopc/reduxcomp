@@ -2,10 +2,26 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { doLogin } from "../actions"
 
-let Login = ({dispatch}) => 
+const mapStateToProps = (state, ownProps) => {
+  console.log(state)
+  return {
+    url : state.login.url,
+    message : state.login.message, 
+    username : state.login.username, 
+    password : state.login.password
+
+  }
+}
+
+let Login = ({dispatch, url, message, password, username}) => 
 {
-	let username
-	let password
+	//let username
+	//let password
+
+  console.log(url)
+  console.log(message)
+  console.log(username)
+  console.log(password)
 
 	return (
 
@@ -13,17 +29,19 @@ let Login = ({dispatch}) =>
       <form onSubmit={e => {
         e.preventDefault()
         dispatch(doLogin({
-          username : username, 
-          password : password, 
-          url : 'secret'
-        }))
+            username : username, 
+            password : password, 
+            url : 'secret', 
+            message : 'no mesage'
+          }))
           username = '' 
           password = '' 
         }}>
 
-        <input value={username} placeholder='Username' />
+        <input placeholder='Username' />
+        <input placeholder='Password' />
 
-        <input value={password} placeholder='Password' />
+        {url}
 
         <button type="submit">Login</button>
       </form>
@@ -31,6 +49,6 @@ let Login = ({dispatch}) =>
 	)
 }
 
-Login = connect()(Login)
+Login = connect(mapStateToProps)(Login)
 export default Login
 
