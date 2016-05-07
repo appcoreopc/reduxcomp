@@ -4,11 +4,11 @@ import { render } from 'react-dom'
 import { Provider } from 'react-redux'
 import { createStore } from 'redux'
 
-import loginApp from './reducers/loginApp'
 import Login from './components/Login'
 import ForgotPassword from './components/ForgotPassword'
+import configureStore from './configureStore'
 
-let store = createStore(loginApp)
+let store = configureStore()
 
 render(
   <Provider store={store}>

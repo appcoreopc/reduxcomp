@@ -21,12 +21,12 @@ let Login = ({dispatch, url, message, password, username}) =>
 	 <div className='gridbox'>
       <form onSubmit={e => {
         e.preventDefault()
-        dispatch(doLogin({
+        doLogin(dispatch, {
             username : usernameInput.value, 
             password : passwordInput.value, 
             url : 'secret', 
             message : 'no mesage'
-          }))
+          })
           username = '' 
           password = '' 
         }}>
