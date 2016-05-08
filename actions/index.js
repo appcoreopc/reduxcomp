@@ -11,6 +11,8 @@
 
   export function getDoLogin(dispatch, loginInfo) 
   {
+      console.log('getlogin')
+      console.log(loginInfo);
       //return (dispatch, getState) => {
       dispatch(passlogin(loginInfo)) 
       dispatch(requestAwait())   
@@ -43,7 +45,7 @@
   function getLogin(dispatch) { 
 
       dispatch(requestAwait())   
-
+      dispatch(requestAwait())   
       fetch('http://jsonplaceholder.typicode.com/posts/1')
       .then(response =>  { 
         //console.log(response)  
@@ -95,7 +97,8 @@
       message : 'no message from us',
       url  : 'loginInfo.url', 
       username : 'jeremy',
-      password : 'secret'
+      password : 'secret', 
+      isPending : false
     }
   }
 

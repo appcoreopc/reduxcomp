@@ -8,7 +8,7 @@ const mapStateToProps = (state, ownProps) => {
     message : state.login.message, 
     username : state.login.username, 
     password : state.login.password, 
-    isPending : false
+    isPending : state.login.isPending
   }
 }
 
@@ -16,8 +16,8 @@ let Login = ({dispatch, url, message, password, username, isPending }) =>
 {
 	let usernameInput
 	let passwordInput
-  console.log('my message ' + message)
-  
+  console.log('my message ' + isPending)
+
  return (
 
  <div className='gridbox'>
