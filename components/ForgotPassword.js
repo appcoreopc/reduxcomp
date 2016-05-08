@@ -19,7 +19,6 @@ let ForgotPassword = ({dispatch, email, message}) =>
    <div className='gridbox'>
       <form onSubmit={e => {
         e.preventDefault()
-        console.log('forgot module!!')
         doForgotPassword(dispatch, {
             email : emailInput.value, 
             message : 'no mesage'

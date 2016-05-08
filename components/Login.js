@@ -1,32 +1,35 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { doLogin } from "../actions"
+import { getDoLogin } from "../actions"
 
 const mapStateToProps = (state, ownProps) => {
   return {
     url : state.login.url,
     message : state.login.message, 
     username : state.login.username, 
-    password : state.login.password
+    password : state.login.password, 
+    isPending : false
   }
 }
 
-let Login = ({dispatch, url, message, password, username}) => 
+let Login = ({dispatch, url, message, password, username, isPending }) => 
 {
 	let usernameInput
 	let passwordInput
 
-  return (
+  console.log('my message ' + message)
+ return (
 
-	 <div className='gridbox'>
-      <form onSubmit={e => {
+ <div className='gridbox'>
+     <form onSubmit={e => {
         e.preventDefault()
-        doLogin(dispatch, {
+            dispatch(getDoLogin({
             username : usernameInput.value, 
             password : passwordInput.value, 
             url : 'secret', 
-            message : 'no mesage'
-          })
+            message : 'no mesage',
+            isPending : false
+          }))
           username = '' 
           password = '' 
         }}>
@@ -35,11 +38,11 @@ let Login = ({dispatch, url, message, password, username}) =>
         <input placeholder='Password' ref={ node => { passwordInput = node }}/>
           <button type="submit">Login</button>
           <span>{message}</span>
-      </form>
+
+     </form>
     </div>		
 	)
 }
 
 Login = connect(mapStateToProps)(Login)
 export default Login
-

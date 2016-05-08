@@ -7,7 +7,10 @@ const forgotpassword = (state, action)  => {
 	    	message : action.message
 		  }
 		default : 
-			return { };
+			return {
+				email : action.email,
+	    		message : action.message
+	    	 };
 	}
 }
 

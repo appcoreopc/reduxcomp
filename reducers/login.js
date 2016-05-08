@@ -6,10 +6,13 @@ const login = (state, action)  =>
 	    	username : action.username, 
 	    	password : action.password,
 	    	url : action.url,
-	    	message : action.message
+	    	message : action.message, 
+	    	isPending : action.isPending
 	    }
     default: 
-	      return {}
+	      return {
+	     	
+	      }
   }
 }
 
