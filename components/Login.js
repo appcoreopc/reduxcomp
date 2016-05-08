@@ -16,20 +16,20 @@ let Login = ({dispatch, url, message, password, username, isPending }) =>
 {
 	let usernameInput
 	let passwordInput
-
   console.log('my message ' + message)
+  
  return (
 
  <div className='gridbox'>
      <form onSubmit={e => {
         e.preventDefault()
-            dispatch(getDoLogin({
+            getDoLogin(dispatch, {
             username : usernameInput.value, 
             password : passwordInput.value, 
             url : 'secret', 
             message : 'no mesage',
             isPending : false
-          }))
+          })
           username = '' 
           password = '' 
         }}>

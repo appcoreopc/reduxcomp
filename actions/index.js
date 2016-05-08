@@ -9,12 +9,23 @@
 
   export const AWAITER = 'AWAIT'
 
-  export function getDoLogin(loginInfo) 
+  export function getDoLogin(dispatch, loginInfo) 
   {
-    return (dispatch, getState) => {
+      //return (dispatch, getState) => {
       dispatch(passlogin(loginInfo)) 
-      return dispatch(getLogin());
-    }
+      dispatch(requestAwait())   
+
+      fetch('http://jsonplaceholder.typicode.com/posts/1')
+      .then(response =>  { 
+        console.log(response)  
+      })
+      .then(json => { 
+        dispatch(requestNoWait()) 
+        dispatch(receiveLogin(json)) 
+      })
+      
+      //getLogin(dispatch);
+      //}
   }
 
   function passlogin(loginInfo)
@@ -29,21 +40,18 @@
     }
   }
 
-  function getLogin() { 
-    return dispatch => { 
+  function getLogin(dispatch) { 
 
-      //dispatch(requestAwait())   
+      dispatch(requestAwait())   
 
-      return fetch('http://jsonplaceholder.typicode.com/posts/1')
+      fetch('http://jsonplaceholder.typicode.com/posts/1')
       .then(response =>  { 
         //console.log(response)  
       })
       .then(json => { 
         dispatch(receiveLogin(json)) 
-        //dispatch(requestNoWait()) 
-      }
-      )
-    }
+        dispatch(requestNoWait()) 
+      })
         //.then(response => response.json())
         //.then(json => dispatch(receiveLogin(loginInfo, json)))
   }
