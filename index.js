@@ -7,6 +7,7 @@ import { createStore } from 'redux'
 import Login from './components/Login'
 import ForgotPassword from './components/ForgotPassword'
 import configureStore from './configureStore'
+import Slider from './components/Slider'
 
 let store = configureStore()
 
@@ -24,7 +25,12 @@ render(
   document.getElementById('forgot')
 )
 
-
+render(
+  <Provider store={store}>
+    <Slider timeout={40} repeat='continous' />
+  </Provider>,
+  document.getElementById('slider')
+)
 
 
 
