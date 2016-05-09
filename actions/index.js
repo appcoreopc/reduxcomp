@@ -4,19 +4,14 @@
   export const RECEIVE_LOGIN = 'RECEIVE_LOGIN'
   export const LOGIN = 'LOGIN'
 
-  export const REQUEST_FORGOTPASSWORD = 'FORGOT_PASSWORD'
-  export const RECEIVE_FORGOTPASSWORD = 'FORGOT_PASSWORD'
-
+  export const FORGOTPASSWORD = 'FORGOT_PASSWORD'
   export const AWAITER = 'AWAIT'
 
   export function getDoLogin(dispatch, loginInfo) 
   {
-      console.log('getlogin')
-      console.log(loginInfo);
       //return (dispatch, getState) => {
       dispatch(passlogin(loginInfo)) 
       dispatch(requestAwait())   
-
       fetch('http://jsonplaceholder.typicode.com/posts/1')
       .then(response =>  { 
         console.log(response)  
@@ -25,7 +20,6 @@
         dispatch(requestNoWait()) 
         dispatch(receiveLogin(json)) 
       })
-      
       //getLogin(dispatch);
       //}
   }
@@ -102,7 +96,6 @@
     }
   }
 
-
   function getForgetPassword(dispatch, loginInfo) {
 
    dispatch(requestForgotPassword(loginInfo))
@@ -117,18 +110,18 @@
         //.then(json => dispatch(receiveLogin(loginInfo, json)))
  }
 
-      function requestForgotPassword(loginInfo) {
+function requestForgotPassword(loginInfo) {
         return {
-          type: REQUEST_FORGOTPASSWORD,
+          type: FORGOTPASSWORD,
           email : loginInfo.email, 
           message : loginInfo.message
         }
-      }
+}
 
-      function receiveForgotPassword(loginInfo, json) {
-        return {
-         type: 'FORGOT_PASSWORD', 
+function receiveForgotPassword(loginInfo, json) {
+   return {
+         type: FORGOTPASSWORD, 
          email : loginInfo.email,
          message : 'no forgot password message for the time being'
        }
-     }
+}

@@ -3,12 +3,13 @@ import { connect } from 'react-redux'
 import { getDoLogin } from "../actions"
 
 const mapStateToProps = (state, ownProps) => {
+
   return {
     url : state.login.url,
     message : state.login.message, 
     username : state.login.username, 
     password : state.login.password, 
-    isPending : state.login.isPending
+    isPending : state.awaiter.isPending
   }
 }
 
@@ -16,7 +17,6 @@ let Login = ({dispatch, url, message, password, username, isPending }) =>
 {
 	let usernameInput
 	let passwordInput
-  console.log('my message ' + isPending)
 
  return (
 
@@ -36,8 +36,8 @@ let Login = ({dispatch, url, message, password, username, isPending }) =>
 
         <input placeholder='Username' ref={ node => { usernameInput = node }} />
         <input placeholder='Password' ref={ node => { passwordInput = node }}/>
-          <button type="submit">Login</button>
-          <span>{message}</span>
+        <button type="submit">Login</button>
+        <span>{message}</span>
 
      </form>
     </div>		

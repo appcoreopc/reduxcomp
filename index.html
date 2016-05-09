@@ -4,16 +4,59 @@
     <title>Redux control demo</title>
 <style>
 
+body { 
+  font-family: arial;
+ }
+
+#signin {
+ width: 20%;
+ height: 450px;
+
+  margin: 2px 2px 2px 2px;
+  border: 2px 2px 2px 2px;
+  padding: 0px 0px 0px 0px;
+}
+
+#forgot {
+  width: 253px;
+  height: 450px;
+
+  margin: 2px 2px 2px 2px;
+  border: 2px 2px 2px 2px;
+  padding: 0px 0px 0px 0px;
+}
+
 .gridbox { 
     width: 253px;
     height: 450px;
-    transform: translate3d(269px, 0px, 0px);
     position: relative;
     box-sizing: border-box;
     display: block;
     transition: transform 300ms ease;
     background-image: url("template.jpg");
+      margin: 2px 2px 2px 2px;
+  border: 2px 2px 2px 2px;
+  padding: 0px 0px 0px 0px;
+
 }
+
+.gridbox button {
+  display: block;
+  margin-top: 10px;
+  padding : 4px 4px 4px 4px;
+}
+
+.gridbox input {
+  width : 100%;
+  font-size: 16px;
+}
+
+.gridbox span {
+  padding : 4px 4px 4px 4px;
+  color : red;
+}
+
+
 
 form  {
   padding-top: 230px

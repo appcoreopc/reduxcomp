@@ -27,7 +27,7 @@ let ForgotPassword = ({dispatch, email, message}) =>
         }}>
 
         <input placeholder='Email' ref={ node => { emailInput = node }}/>
-          <button type='submit'>Recover</button>
+          <button className='btn' type='submit'>Recover</button>
           <span>{message}</span>
       </form>
     </div>    
