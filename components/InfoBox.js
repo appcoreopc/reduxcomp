@@ -11,8 +11,6 @@ import { connect } from 'react-redux'
 
 let Slider = ({dispatch, image, header, content, link}) => 
 {
-  console.log(timeout)
-  console.log(repeat)
 
   let emailInput
   return (

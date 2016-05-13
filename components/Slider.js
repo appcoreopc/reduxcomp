@@ -2,37 +2,42 @@ import React, { Component, PropTypes } from 'react'
 import fade from 'fade'
 
 export default class Slider extends Component {
-  
-  
   constructor(props) {
 
     super(props)
+
 	console.log(props.timeout)
   	console.log(props.repeat)
-  	this.loopTransition = this.loopTransition.bind(this)
 
+  	this.loopTransition = this.loopTransition.bind(this)
   	this.state = { 
   		opacity : 1
   	}
   }
-
   
   componentDidMount()
   {
-
-  	let elem = this.refs.imagebox
+  	// define ref obj to imagebox 
+  	let elem = this.refs.imagebox 
+	// loop function
   	let loops = this.loopTransition
   	let opacity = this.state.opacity
-  	var self = this;
+  	
+   if (elem) {
+	
+		const { width, height } = this.props
 
-  		elem.src = 'pix.jpg'   
+	  	elem.src = 'pix.jpg'   
 		elem.style.opacity = opacity
+		elem.width = width
+		elem.height = height
 
-    	window.requestAnimationFrame(function() {
-	   	    elem.style.transition = "linear 5s"
-        	elem.style.opacity = 0
-        	elem.addEventListener("transitionend", loops, false);
-   		});
+	    window.requestAnimationFrame(function() {
+		   	    elem.style.transition = "linear 5s"
+	        	elem.style.opacity = 0
+	        	elem.addEventListener("transitionend", loops, false);
+	   	});
+	}
  }
 
  setOpacity(current)
@@ -54,7 +59,7 @@ export default class Slider extends Component {
 
  getNextOpacity(prevState)
  {
- 	if ( prevState== 0)
+ 	if ( prevState == 0)
  		return 1
  	else 
  		return 0

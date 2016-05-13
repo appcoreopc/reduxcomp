@@ -27,7 +27,7 @@ render(
 
 render(
   <Provider store={store}>
-    <Slider timeout={500} repeat='continous' />
+    <Slider width={400} height={400} timeout={500} repeat='continous' />
   </Provider>,
   document.getElementById('slider')
 )
