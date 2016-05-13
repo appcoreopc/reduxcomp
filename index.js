@@ -8,6 +8,8 @@ import Login from './components/Login'
 import ForgotPassword from './components/ForgotPassword'
 import configureStore from './configureStore'
 import Slider from './components/Slider'
+import InfoBox from './components/InfoBox'
+
 
 let store = configureStore()
 
@@ -32,6 +34,15 @@ render(
   document.getElementById('slider')
 )
 
+render(
+  <Provider store={store}>
+    <InfoBox 
+    figcaptionText='Git blame- Caravaggio, Oil on canvas, circa 1607' 
+    text='Download the official Android IDE and developer tools to build apps for Android phones, tablets, wearables, TVs, and more.'
+     width={340} height={250} imageSrc='gitblame.jpg'/>
+  </Provider>,
+  document.getElementById('infobox')
+)
 
 
 
