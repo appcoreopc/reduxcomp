@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 
-export default class InfoBox extends Component {
+export default class GettingStarted extends Component {
 
   constructor(props) {
     super(props)
@@ -11,12 +11,9 @@ componentDidMount()
 {
 }
 
-
-// figcaptionText, imageSrc, width, height, text, url, urltext 
-
 render() {
 
-    const { figcaptionText, imageSrc, width, height, text, url, urltext  } = this.props
+    const { figcaptionText, imageSrc, width, height, text  } = this.props
 
     return (
       <article className="photo active exposed masonry-brick">
@@ -48,7 +45,7 @@ render() {
           <footer className="post-footer">
                 <section className="inline-meta date-notes">
                   <div className="date-note-wrapper">
-                     <a href={url} className="meta-item post-notes">{urltext}</a>
+                     <a href="" className="meta-item post-notes">142 notes</a>
                    </div>
                 </section>
 
