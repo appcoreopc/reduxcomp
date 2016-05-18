@@ -2,28 +2,52 @@ import React, { Component, PropTypes } from 'react'
 
 export default class GettingStarted extends Component {
 
-  constructor(props) {
-    super(props)
-
+constructor(props) {
+  super(props)
+  this.state = {
+     imageIdx : 0
   }
-  
-componentDidMount()
-{
 }
 
+handleKey(e) 
+{
+
+    var idx = this.state.imageIdx
+    
+    if (idx < this.props.images.length)
+    { 
+      let imgLink = this.props.images[idx]
+      var img = this.refs.imagebox 
+      img.src = imgLink;
+
+      let idxVal = 0
+
+      if (idx == this.props.images.length - 1)
+        idxVal = 0
+      else 
+        idxVal = idx + 1
+
+      this.setState({ 
+        imageIdx : idxVal
+      })
+    }
+    
+}
+
+// figcaptionText, imageSrc, width, height, text, url, urltext 
 render() {
 
-    const { figcaptionText, imageSrc, width, height, text  } = this.props
+    const { figcaptionText, imageSrc, width, height, text, url, urltext, images } = this.props
 
     return (
       <article className="photo active exposed masonry-brick">
         
-        <div className="post-wrapper clearfix">
+        <div className="post-wrapper clearfix" onClick={(e) => {this.handleKey(e)}}>
          <section> 
      
             <figure className="post-content high-res with-caption"> 
                 <div className="photo-wrapper-inner">
-                  <img className='picturePerfect' src={imageSrc} />
+                  <img className='picturePerfect' src={imageSrc} ref='imagebox' />
                 </div>
             </figure> 
 
@@ -45,7 +69,7 @@ render() {
           <footer className="post-footer">
                 <section className="inline-meta date-notes">
                   <div className="date-note-wrapper">
-                     <a href="" className="meta-item post-notes">142 notes</a>
+                     <a href={url} className="meta-item post-notes">{urltext}</a>
                    </div>
                 </section>
 
