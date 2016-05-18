@@ -48,8 +48,10 @@ render(
 render(
   <Provider store={store}>
     <GettingStarted images={['pix.jpg', 'gitblame.jpg']}
-    figcaptionText='Git blame- Caravaggio, Oil on canvas, circa 1607' 
-    text='Download the official Android IDE and developer tools to build apps for Android phones, tablets, wearables, TVs, and more.'
+    figcaptionText='Getting started guide.' 
+    text={[
+      'Download the official Android IDE and developer tools to build apps for Android phones, tablets, wearables, TVs, and more.',
+      'Deep dive into Google Android N']}
      width={340} height={250} imageSrc='gitblame.jpg' url='http://www.google.com' urltext='145 votes'/>
   </Provider>,
   document.getElementById('getstarted')

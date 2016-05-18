@@ -1,11 +1,11 @@
 import React, { Component, PropTypes } from 'react'
-
 export default class GettingStarted extends Component {
 
 constructor(props) {
   super(props)
   this.state = {
-     imageIdx : 0
+     imageIdx : 0, 
+     currentText : ''
   }
 }
 
@@ -13,12 +13,11 @@ handleKey(e)
 {
 
     var idx = this.state.imageIdx
-    
     if (idx < this.props.images.length)
     { 
       let imgLink = this.props.images[idx]
       var img = this.refs.imagebox 
-      img.src = imgLink;
+      img.src = imgLink
 
       let idxVal = 0
 
@@ -28,16 +27,19 @@ handleKey(e)
         idxVal = idx + 1
 
       this.setState({ 
-        imageIdx : idxVal
+        imageIdx : idxVal, 
       })
-    }
-    
+    }    
 }
 
 // figcaptionText, imageSrc, width, height, text, url, urltext 
 render() {
 
     const { figcaptionText, imageSrc, width, height, text, url, urltext, images } = this.props
+
+    let dataText = this.props.text[this.state.imageIdx]
+    if (!dataText)
+        dataText = ''
 
     return (
       <article className="photo active exposed masonry-brick">
@@ -56,7 +58,7 @@ render() {
             </figcaption> 
 
             <div className="captionText">
-              {text}
+              {dataText}
             </div>
      
             <section className="inline-meta post-extra">
