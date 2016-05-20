@@ -88,7 +88,7 @@
   function receiveLogin(json) {
     return {
       type: LOGIN, 
-      message : 'no message from us',
+      message : 'not integrated to backend at the moment.',
       url  : 'loginInfo.url', 
       username : 'jeremy',
       password : 'secret', 
@@ -122,6 +122,6 @@ function receiveForgotPassword(loginInfo, json) {
    return {
          type: FORGOTPASSWORD, 
          email : loginInfo.email,
-         message : 'no forgot password message for the time being'
+         message : 'not integrated to backend at the moment.'
        }
 }

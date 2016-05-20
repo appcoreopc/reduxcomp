@@ -74,22 +74,7 @@ render() {
                      <a href={url} className="meta-item post-notes">{urltext}</a>
                    </div>
                 </section>
-
-                <section className="post-controls">
-                  <div className="control-wrapper">
-                    <div className="control share-control">
-                        <nav className="pop">
-                          <ul>
-                             <li> 
-                                <img src='fav.png' className="imageNav"/>
-                                <img src='fav.png' className="imageNav"/>
-                             </li> 
-                          </ul>
-                        </nav>
-                     </div>
-                  </div>
-                </section>
-              </footer>
+            </footer>
          </section>
          </div>
      </article>

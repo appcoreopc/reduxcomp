@@ -1,130 +1,130 @@
 <!DOCTYPE html>
+
 <html>
-  <head>
-    <title>Redux control demo</title>
+<head>
+<title>Redux control demo</title>
+
 <style>
 
-
-body {
+body 
+{
     margin: 0 auto;
     line-height: 1.4;
     background: #fafafa;
     color: #444;
     font-family: "Helvetica Neue",HelveticaNeue,Arial,sans-serif;
-}
+    padding-left : 10px;
+ }
 
 #signin {
- width: 253px;
- height: 450px;
- margin: 2px 2px 2px 2px;
- border: 2px 2px 2px 2px;
- padding: 12px 12px 12px 12px;
-}
+     width: 253px;
+     height: 450px;
+     margin: 2px 2px 2px 2px;
+     padding: 12px 12px 12px 12px;
+     border: 1px solid rgba(0,0,0,.08);
+     font-family: "Helvetica Neue",HelveticaNeue,Arial,sans-serif;
+   }
 
-#forgot {
-  width: 253px;
-  height: 450px;
-  margin: 2px 2px 2px 2px;
-  border: 2px 2px 2px 2px;
-  padding: 12px 12px 12px 12px;
-}
+   #forgot {
+    width: 253px;
+    height: 450px;
+    margin: 2px 2px 2px 2px;
+    padding: 12px 12px 12px 12px;
+    border: 1px solid rgba(0,0,0,.08);
+    font-family: "Helvetica Neue",HelveticaNeue,Arial,sans-serif;
+  }
 
-.gridbox { 
+  .gridbox { 
     width: 253px;
     height: 450px;
     position: relative;
     box-sizing: border-box;
-    display: block;
     transition: transform 300ms ease;
     background-image: url("template.jpg");
     margin: 2px 2px 2px 2px;
     border: 2px 2px 2px 2px;
     padding: 12px 12px 12px 12px;
 
-}
+  }
 
-.gridbox button {
-  display: block;
-  margin-top: 10px;
-  padding : 4px 4px 4px 4px;
-}
+  .gridbox button {
+    display: block;
+    margin-top: 10px;
+    padding : 4px 4px 4px 4px;
+    margin-bottom: 10px;
+  }
 
-.gridbox input {
-  width : 100%;
-  font-size: 16px;
-}
+  .gridbox input {
+    width : 100%;
+    font-size: 16px;
+  }
 
-.gridbox span {
-  padding : 4px 4px 4px 4px;
-  color : red;
-}
+  .gridbox span {
+    padding : 10px 4px 4px 4px;
+    color : red;
+  }
 
-body { margin: 0; } 
+  body { margin: 0; } 
 
-form  {
-  padding-top: 230px
-}
+ form {
+    padding-top: 200px
+  }
 
-input {  
-  margin-top:15px; 
-  height:20px
-}
+  input {  
+    margin-top:15px; 
+    height:20px
+  }
 
-.sliderBox {  
-  margin: 2px 2px 2px 2px;
-  border: 2px 2px 2px 2px;
-  padding: 12px 12px 12px 12px;
-  border: 1px solid #eee;
-  border: 1px solid rgba(0,0,0,.08);
-}
+  .sliderBox {  
+    margin: 2px 2px 2px 2px;
+    border: 2px 2px 2px 2px;
+    padding: 12px 12px 12px 12px;
+    border: 1px solid #eee;
+    border: 1px solid rgba(0,0,0,.08);
+  }
 
-
-.post-footer {
+  .post-footer {
     clear: both;
     display: table;
     z-index: 2;
-
     height: 50px;
     position: relative;
     width: 100%;
-}
+  }
 
-.related-posts-wrapper .grid article {
+  .related-posts-wrapper .grid article {
     opacity: 0;
     width: 300px;
-}
-.related-posts-wrapper article {
+  }
+  .related-posts-wrapper article {
     margin: 0 15px 30px;
     position: relative;
-}
+  }
 
-.permalink .post-extra {
+  .permalink .post-extra {
     margin: 0 20px 5px;
-}
+  }
 
-.post-extra {
+  .post-extra {
     font-family: "Helvetica Neue",HelveticaNeue,Arial,sans-serif;
     margin: 0;
-}
-.inline-meta, .post-extra {
+  }
+  .inline-meta, .post-extra {
     font-size: 14px;
+  }
 
-}
-
-.inline-meta .meta-item {
+  .inline-meta .meta-item {
     display: inline-block;
     margin-right: 10px;
     color: #a7a7a7;
     text-decoration: none;
     line-height: 1.2;
-}
+  }
 
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
-    /* display: block; */
-}
-
-.post-wrapper {
+  .post-wrapper {
     background: #fff;
     border-radius: 4px;
     overflow: hidden;
@@ -134,63 +134,62 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, 
     border: 1px solid #eee;
     border: 1px solid rgba(0,0,0,.08);
     width : 405px;
-}
+    padding-bottom: 20px;
+  }
 
-.post-footer {
+  .post-footer {
     clear: both;
     display: table;
     z-index: 2;
-}
-.panel, .post-footer {
+  }
+  .panel, .post-footer {
     z-index: 1;
     height: 50px;
     position: relative;
     width: 100%;
-}
+  }
 
-.clearfix {
+  .clearfix {
     zoom: 1;
-}
+  }
 
-.post {
+  .post {
     padding: 0;
     position: relative;
     word-wrap: break-word;
     overflow: hidden;
-}
+  }
 
-.photo-wrapper, .caption {
+  .photo-wrapper, .caption {
     border-top: 1px solid #efefef;
     margin: 0;
     padding: 10px;
     font-size: 14px;
     width : 100%;
-}
+  }
 
-.captionText {
+  .captionText {
     border-top: 1px solid #efefef;
     margin: 0;
     padding: 10px;
     font-size: 12px;
-}
+  }
 
-p {
+  p {
     display: block;
     -webkit-margin-before: 1em;
     -webkit-margin-after: 1em;
     -webkit-margin-start: 0px;
     -webkit-margin-end: 0px;
-}
+  }
 
-article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
+  article, aside, details, figcaption, figure, footer, header, hgroup, main, nav, section, summary {
     /* display: block; */
-}
+  }
 
-article, aside, footer, header, hgroup, main, nav, section {
+  article, aside, footer, header, hgroup, main, nav, section {
     display: block;
-}
-
-
+  }
 
 .pop-menu ul li a {
     background: 0 0;
@@ -213,7 +212,7 @@ article, aside, footer, header, hgroup, main, nav, section {
     bottom: 25px;
 }
 
-.pop-menu {
+  .pop-menu {
     display: none;
     background: #fff;
     border-radius: 3px;
@@ -223,87 +222,100 @@ article, aside, footer, header, hgroup, main, nav, section {
     width: 146px;
     box-shadow: 0 1px 5px rgba(0,0,0,.25);
     z-index: 10;
-}
+  }
 
-.inline-meta, .post-extra {
+  .inline-meta, .post-extra {
     font-size: 14px;
     padding:  10px;
-}
+  }
 
-.post-controls .control {
-      display: table-cell;
+  .post-controls .control {
+    display: table-cell;
     vertical-align: middle;
     min-width: 150px;
     color: #a7a7a7;
-}
+  }
 
-.date-notes {
+  .date-notes {
     display: table-cell;
     vertical-align: middle;
     font-weight: 700;
-}
+  }
 
-.picturePerfect {
-  width: inherit;
-  height : inherit;
-}
+  .picturePerfect {
+    width: inherit;
+    height : inherit;
+  }
 
-.photo-wrapper-inner {
+  .photo-wrapper-inner {
 
     display: table-cell;
     padding: 40px 0;
     vertical-align: middle;
     width : 100%;
-}
+  }
 
-.imageNav {
-  padding : 6px;
-}
+  .imageNav {
+    padding : 6px;
+  }
+
+  .dac-section-subtitle {
+   font-size: 16px;
+   padding-bottom: 40px;
+   margin-top: -24px;
+   text-align: center;
+ }
+
+
 
 </style>
 
+</head>
+<body>
+  <div id="root">
+  </div>
 
-  </head>
-  <body>
-    <div id="root">
-    </div>
+  <h1> This is an effort to create commonly used react/redux controls. </h1> 
+  <br/><br/>
 
-This is an effort to create commonly used react controls. 
+  <div class="dac-section-subtitle">Sign in control  </div>
+  <br/><br/>
+  <div id="signin">
+  </div>
 
-
-
-Sign in control 
-
-	<div id="signin">
-    </div>
-
-Forgot password control 
+  <br/><br/>
+  <div class="dac-section-subtitle"> Forgot password control  </div>
+  <br/><br/>
 
 
-	<div id="forgot">
-    </div>
+  <div id="forgot"></div>
 
-A control that ease in and ease out images continously
+  <br/><br/>
+  <div class="dac-section-subtitle"> A control that ease in and ease out images continously </div>
+  <br/><br/>
 
   <div id="slider">
-    </div>
+  </div>
+
+  <br/><br/> <br/>
+  <div class="dac-section-subtitle"> A control that allow you to easily create boxes on your webpage. </div>
+  <br/><br/>
+
+  <div id="infobox"></div>
 
 
-
-A control that allow you to easily create boxes on your webpage.
-
-
-  <div id="infobox">
-    </div>
-
-
-A getting started control which shows next page / image when you click the mouse button. It goes back to the first page if there are no more pages to scroll.
-
+  <br/><br/><br/>
+  <br/><br/>
+  <div class="dac-section-subtitle"> 
+    A getting started control which shows next page / image when you click the mouse button. It goes back to the first page if there are no more pages to scroll.
+  </div>
+  <br/>
   <div id="getstarted">
-    </div>
+  </div>
 
+<br/><br/><br/>
 
-    <script src="/static/bundle.js"></script>
-  </body>
+ <script src="/static/bundle.js"></script>
+</body>
 </html>
 
