@@ -2,21 +2,33 @@
 
 <html>
 <head>
-<title>Redux control demo</title>
+  <title>Redux control demo</title>
 
-<style>
+  <style>
 
-body 
-{
-    margin: 0 auto;
-    line-height: 1.4;
-    background: #fafafa;
-    color: #444;
-    font-family: "Helvetica Neue",HelveticaNeue,Arial,sans-serif;
-    padding-left : 10px;
- }
 
-#signin {
+
+.arc text {
+  font: 10px sans-serif;
+  text-anchor: middle;
+}
+
+.arc path {
+  stroke: #fff;
+}
+
+
+    body 
+    {
+      margin: 0 auto;
+      line-height: 1.4;
+      background: #fafafa;
+      color: #444;
+      font-family: "Helvetica Neue",HelveticaNeue,Arial,sans-serif;
+      padding-left : 10px;
+    }
+
+    #signin {
      width: 253px;
      height: 450px;
      margin: 2px 2px 2px 2px;
@@ -66,7 +78,7 @@ body
 
   body { margin: 0; } 
 
- form {
+  form {
     padding-top: 200px
   }
 
@@ -191,7 +203,7 @@ body
     display: block;
   }
 
-.pop-menu ul li a {
+  .pop-menu ul li a {
     background: 0 0;
     color: #444;
     display: block;
@@ -202,15 +214,15 @@ body
     position: relative;
     text-decoration: none;
     width: auto;
-}
+  }
 
-.share-menu ul li a, .share-menu ul li a:hover {
+  .share-menu ul li a, .share-menu ul li a:hover {
     opacity: 1;
-}
+  }
 
-.share-menu {
+  .share-menu {
     bottom: 25px;
-}
+  }
 
   .pop-menu {
     display: none;
@@ -313,9 +325,23 @@ body
   <div id="getstarted">
   </div>
 
-<br/><br/><br/>
+  <br/><br/><br/>
 
- <script src="/static/bundle.js"></script>
+  <div class="dac-section-subtitle"> 
+    Pie chart sample
+  </div>
+  <br/><br/>
+
+
+  <div id="piechart">
+  </div>
+  <br/><br/>
+
+
+  <script src="/static/bundle.js"></script>
 </body>
 </html>
+
+
+
 

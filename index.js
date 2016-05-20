@@ -10,7 +10,7 @@ import configureStore from './configureStore'
 import Slider from './components/Slider'
 import InfoBox from './components/InfoBox'
 import GettingStarted from './components/GettingStarted'
-
+import Pie from './components/Pie'
 
 let store = configureStore()
 
@@ -56,5 +56,15 @@ render(
   </Provider>,
   document.getElementById('getstarted')
 )
+
+render(
+  <Provider store={store}>
+    <Pie dataset={[{"label":"Android", "value":20}, 
+              {"label":"iOS", "value":50}, 
+              {"label":"Others", "value":30}]}/>
+  </Provider>,
+  document.getElementById('piechart')
+)
+
 
 
