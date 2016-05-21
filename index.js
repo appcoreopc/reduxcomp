@@ -11,6 +11,7 @@ import Slider from './components/Slider'
 import InfoBox from './components/InfoBox'
 import GettingStarted from './components/GettingStarted'
 import Pie from './components/Pie'
+import Donut from './components/Donut'
 
 let store = configureStore()
 
@@ -66,5 +67,13 @@ render(
   document.getElementById('piechart')
 )
 
+render(
+  <Provider store={store}>
+    <Donut dataset={[{"label":"Android", "value":20}, 
+              {"label":"iOS", "value":50}, 
+              {"label":"Others", "value":30}]}/>
+  </Provider>,
+  document.getElementById('donutchart')
+)
 
 
