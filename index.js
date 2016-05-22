@@ -12,6 +12,7 @@ import InfoBox from './components/InfoBox'
 import GettingStarted from './components/GettingStarted'
 import Pie from './components/Pie'
 import Donut from './components/Donut'
+import Bar from './components/Bar'
 
 let store = configureStore()
 
@@ -54,7 +55,7 @@ render(
       'Download the official Android IDE and developer tools to build apps for Android phones, tablets, wearables, TVs, and more.',
       'Deep dive into Google Android N']}
      width={340} height={250} imageSrc='gitblame.jpg' url='http://www.google.com' urltext='145 votes'/>
-  </Provider>,
+  </Provider>,  
   document.getElementById('getstarted')
 )
 
@@ -74,6 +75,13 @@ render(
               {"label":"Others", "value":30}]}/>
   </Provider>,
   document.getElementById('donutchart')
-)
+) 
+
+render(
+  <Provider store={store}>
+    <Bar dataset={[4, 8, 15, 16, 23, 42, 3, 4, 7, 9.8, 7, 11, 12]}/>
+  </Provider>,
+  document.getElementById('bardiv')
+) 
 
 

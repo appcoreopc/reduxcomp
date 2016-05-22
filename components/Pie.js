@@ -27,12 +27,10 @@ var arc = d3.svg.arc().outerRadius(r)
 var arcs = vis.selectAll("g.slice").data(pie).enter().append("svg:g").attr("class", "slice")
 arcs.append("svg:path")
     .attr("fill", function(d, i){
-        return color(i);
+        return color(i)
     })
     .attr("d", function (d) {
-        // log the result of the arc generator to show how cool it is :)
-        console.log(arc(d));
-        return arc(d);
+        return arc(d)
     })
 
 // add the text
